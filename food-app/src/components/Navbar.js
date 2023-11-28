@@ -47,11 +47,7 @@ export default function Navbar() {
                 {links.map(link => (
                     <a href="#!"/*{link.path}*/ key={link.name}>{link.name}</a>
                 ))}
-                {/*<a href="#!">Home</a>
-                <a href="#!">Recipes</a>
-                <a href="#!">Login</a>
-                <a href="#!">Register</a>
-  <a href="#!">Settings</a>*/}
+                
             </div>
             <div
                 onClick={() => setShowSidebar(!showSidebar)}
@@ -64,5 +60,5 @@ export default function Navbar() {
         </div>
         { showSidebar && <Sidebar close={closeSidebar} links={links} /> }
     </>
-  );
+    );
 }
