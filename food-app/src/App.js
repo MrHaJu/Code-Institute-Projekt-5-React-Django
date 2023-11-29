@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import ImproveSkills from "./components/improveSkills";
+import QuoteSection from "./components/QuoteSection";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className="container main">
       <HeroSection />
       <ImproveSkills />
+      <QuoteSection />
       </div>
     </div>
   );
