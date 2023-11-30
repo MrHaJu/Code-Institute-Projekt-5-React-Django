@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faFacebook,faTwitter, faInstagram} from "@fortawesome/free-brands-svg-icons"
+import {faFacebook,faInstagram, faXTwitter} from "@fortawesome/free-brands-svg-icons"
 
 export default function ChiefCard({chief}) {
     return (
@@ -12,9 +12,9 @@ export default function ChiefCard({chief}) {
                 <p className="chief-recipe-count">Recipes: <b>{chief.recipesCount}</b></p>
                 <p className="chief-cuisine">Cuisine: <b>{chief.cuisine}</b></p>
                 <p className="chief-icons">
-                    <FontAwesomeIcon icon={faFacebook} />
-                    <FontAwesomeIcon icon={faTwitter} />
-                    <FontAwesomeIcon icon={faInstagram} />
+                <a href={chief.facebook} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook}  /></a>
+                <a href={chief.twitter} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faXTwitter} /></a>
+                <a href={chief.instagram} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
                 </p>
             </div>
         </div>

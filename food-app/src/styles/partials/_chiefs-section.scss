@@ -40,13 +40,13 @@
         }
         .chief-icons {
             font-size: 1.2em;
-            svg {
+            a {
                 margin-right: .5em;
                 &:nth-child(1){
                     color: #0063f7;
                 }
                 &:nth-child(2){
-                    color: #13b4ff;
+                    color: black;
                 }
                 &:nth-child(3){
                     color: #ff0056;
