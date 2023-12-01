@@ -1,25 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import React from "react";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import ImproveSkills from "./components/improveSkills";
-import QuoteSection from "./components/QuoteSection";
-import ChiefsSection from "./components/ChiefsSection";
+import Home from "./pages/Home";
+import Recepies from "./pages/Recipes";
+import Settings from "./pages/Settings";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 import Footer from "./components/Footer";
-
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
       <div className="container main">
-        <HeroSection />
-        <ImproveSkills />
-        <QuoteSection />
-        <ChiefsSection />
-        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recepies />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </div>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
