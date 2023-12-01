@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <div className="footer container">
+        <footer className="footer container">
             <div className="footer-section">
                 <p className="title">MrHaJus-Recipes.com</p>
                 <p>Mr.HaJu's Recipes is a place where you can share your recepies with other people.</p>
@@ -18,6 +18,6 @@ export default function Footer() {
                 <p>Twitter</p>
                 <p>Instagram</p>
             </div>
-        </div>
+        </footer>
     )
 }
