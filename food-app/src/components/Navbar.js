@@ -48,9 +48,9 @@ export default function Navbar() {
   return (
     <>
       <div className="navbar container">
-        <a href="#!" className="logo">
+        <Link to="/" className="logo">
           Mr.HaJu's <span>Recipes</span> sharing
-        </a>
+        </Link>
         <div className="nav-links">
           {links.map((link) => (
             <Link
