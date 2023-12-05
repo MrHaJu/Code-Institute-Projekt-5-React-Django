@@ -20,12 +20,23 @@ export default function Settings() {
     const [settings, setSettings] = useState(initialSettings);
 
     useEffect(() => {
-        const root = document.documentElement;
-
-        for (let key in settings) {
-            root.style.setProperty(key, settings[key]);
-        }
+    const root = document.documentElement;
+    for (let key in settings) {
+        root.style.setProperty(key, settings[key]);
+    }
+    // saves settings to Local Storage
+    localStorage.setItem("userSettings", JSON.stringify(settings));
+    console.log("settings saved:", settings);
     }, [settings]);
+
+    useEffect(() => {
+        // Loads settings from Local Storage
+        const storedSettings = localStorage.getItem("userSettings");
+        if (storedSettings) {
+            setSettings(JSON.parse(storedSettings));
+            console.log("settings loaded:", JSON.parse(storedSettings));
+        }
+        }, []);
 
     const [theme, setTheme] = useState("light");
     const themes = [
