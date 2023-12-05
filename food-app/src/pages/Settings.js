@@ -30,14 +30,16 @@ export default function Settings() {
     const [theme, setTheme] = useState("light");
     const themes = [
         {
-        "--background-color": "#fff",
-        "--background-light": "#fff",
-        "--shadow-color": "rgba(0,0,0,0.2)",
-        "--primary-color": "rgb(53, 148, 24)",
-        "--text-color": "#0A0A0A",
-        "--text-light": "#575757",
+            id: 0,
+            "--background-color": "#fff",
+            "--background-light": "#fff",
+            "--shadow-color": "rgba(0,0,0,0.2)",
+            "--primary-color": "rgb(53, 148, 24)",
+            "--text-color": "#0A0A0A",
+            "--text-light": "#575757",
         },
         {
+            id: 0,
             "--background-color": "rgb(29, 29, 29)",
             "--background-light": "rgb(77, 77, 77)",
             "--shadow-color": "rgba(0,0,0,0.2)",
@@ -47,14 +49,22 @@ export default function Settings() {
             },
     ]
     function changeTheme(i) {
-        const _theme = {...themes[i]}
+        const newTheme = {...themes[i]}
         setTheme(i === 0 ? "light" : "dark")
         //update settings
         let _settings = {...settings}
-        for(let key in _theme){
-            _settings[key] = _theme[key]
+        for(let key in newTheme){
+            _settings[key] = newTheme[key]
         }
-        setSettings(_settings)
+        setSettings(prevSettings => ({
+            ...prevSettings,
+            "--background-color": newTheme["--background-color"],
+            "--background-light": newTheme["--background-light"],
+            "--shadow-color": newTheme["--shadow-color"],
+            "--text-color": newTheme["--text-color"],
+            "--text-light": newTheme["--text-light"],
+            "--primary-color": prevSettings["--primary-color"],
+        }));
     }
 
     function changeColor(i){
@@ -88,30 +98,38 @@ export default function Settings() {
         "rgb(255, 0, 86)",
         "rgb(156, 39, 176)",
     ]
+
     const fontSizes = [
         {
+            id: 0,
             title: "small",
             value: "12px"
         },
         {
+            id: 1,
             title: "medium",
             value: "16px"
         },
         {
+            id: 2,
             title: "large",
             value: "20px"
         },
     ]
+
     const animationSpeeds = [
         {
+            id: 0,
             title: "slow",
             value: "2"
         },
         {
+            id: 1,
             title: "medium",
             value: "1"
         },
         {
+            id: 2,
             title: "fast",
             value: ".5"
         },
@@ -121,7 +139,7 @@ export default function Settings() {
     const [animationSpeed, setAnimationSpeed] = useState(1)
 
     return (
-    <div>
+    <main>
         <div className="section d-block">
             <h2>Preferred Theme</h2>
             <div className="options-container">
@@ -178,7 +196,7 @@ export default function Settings() {
                 ))}
             </div>
         </div>
-    </div>
+    </main>
     );
 
 }
