@@ -1,6 +1,8 @@
 import CustomImage from "./customimage"
 
 
+import { Link } from "react-router-dom";
+
 export default function HeroSection(){
     const images = [
         "https://res.cloudinary.com/db6t1xmmn/image/upload/c_scale,w_550/v1701115697/PP5/farhad-ibrahimzade-TvMWBS6TIsg-unsplash_ubjfew.jpg",
@@ -19,7 +21,9 @@ export default function HeroSection(){
             <div className="col typography">
                 <h1 className="title">What are we about</h1>
                 <p className="info">Mr.HaJu's Recipes is a place where you can share your recepies with other people. </p>
-                <button className="btn">explore now</button>
+                <Link to="/recipes" className="btn">
+          explore now
+        </Link>
             </div>
             <div className="col gallery">
                 { images.map((src, index) => (

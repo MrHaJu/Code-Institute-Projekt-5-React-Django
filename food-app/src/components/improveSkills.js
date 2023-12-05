@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ImproveSkills(){
     const list =[
         "Learn new recepies",
@@ -17,7 +19,9 @@ export default function ImproveSkills(){
                 {list.map((item, index) => (
                     <p className="skill-item" key={index}>{item}</p>
                 ))}
-                <button className="btn">signup now</button>
+                 <Link to="/register" className="btn">
+          Sign Up Now
+        </Link>
             </div>
             
         </div>
