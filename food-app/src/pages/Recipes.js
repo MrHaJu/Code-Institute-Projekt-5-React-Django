@@ -60,7 +60,7 @@ export default function Recepies() {
         },
     ].sort(() => Math.random() - 0.5)
     return (
-        <div>
+        <main>
             <PreviousSearches />
             <div className="recipes-container">
                 {recipes.map((recipe, index) => (
@@ -68,6 +68,6 @@ export default function Recepies() {
                 ))}
                 
             </div>
-        </div>
+        </main>
     )
 }

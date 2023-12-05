@@ -6,12 +6,12 @@ import ChiefsSection from "../components/ChiefsSection";
 
 export default function Home() {
     return (
-        <div>
+        <main>
             <HeroSection />
             <ImproveSkills />
             <QuoteSection />
             <ChiefsSection />
-        </div>
+        </main>
     )
 
 }

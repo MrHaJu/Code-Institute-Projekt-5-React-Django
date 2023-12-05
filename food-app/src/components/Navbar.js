@@ -47,7 +47,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="navbar container">
+      <nav className="navbar container">
         <Link to="/" className="logo">
           Mr.HaJu's <span>Recipes</span> sharing
         </Link>
@@ -70,7 +70,7 @@ export default function Navbar() {
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
-      </div>
+      </nav>
       {showSidebar && <Sidebar close={closeSidebar} links={links} />}
     </>
   );
