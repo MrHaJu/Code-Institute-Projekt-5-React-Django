@@ -19,9 +19,9 @@ export default function ImproveSkills(){
                 {list.map((item, index) => (
                     <p className="skill-item" key={index}>{item}</p>
                 ))}
-                 <Link to="/register" className="btn">
-          Sign Up Now
-        </Link>
+                <Link to="/register" className="btn">
+                    Sign Up Now
+                </Link>
             </div>
             
         </div>

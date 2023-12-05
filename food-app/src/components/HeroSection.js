@@ -22,8 +22,8 @@ export default function HeroSection(){
                 <h1 className="title">What are we about</h1>
                 <p className="info">Mr.HaJu's Recipes is a place where you can share your recepies with other people. </p>
                 <Link to="/recipes" className="btn">
-          explore now
-        </Link>
+                    explore now
+                </Link>
             </div>
             <div className="col gallery">
                 { images.map((src, index) => (
