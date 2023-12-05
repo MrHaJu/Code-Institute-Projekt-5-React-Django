@@ -28,8 +28,13 @@ body {
     min-height: 100vh;
 }
 
+
+
+
+
+
 main {
-    min-height: 100vh;
+    min-height: 65vh;
 }
 
 a {
@@ -106,6 +111,8 @@ img {
 @import "partials/footer";
 @import "partials/previous-searches";
 @import "partials/recipes-section";
+@import "partials/login";
+@import "partials/register";
 
 .options-container {
     box-shadow: 0 5px 10px var(--shadow-color);
