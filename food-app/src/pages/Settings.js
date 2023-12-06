@@ -77,7 +77,7 @@ export default function Settings() {
             "--primary-color": prevSettings["--primary-color"],
         }));
     }
-
+    //change primary color
     function changeColor(i){
         const _color = primaryColors[i]
         let _settings = {...settings}
@@ -85,7 +85,7 @@ export default function Settings() {
         setPrimaryColor(i)
         setSettings(_settings)
     }
-
+    //change font size
     function changeFontSize(i){
         const _size = fontSizes[i]
         let _settings = {...settings}
@@ -93,7 +93,7 @@ export default function Settings() {
         setFontSize(i)
         setSettings(_settings)
     }
-
+    //sets animation speed
     function changeAnimationSpeed(i){
         let _speed = animationSpeeds[i]
         let _settings = {...settings}
@@ -101,7 +101,7 @@ export default function Settings() {
         setAnimationSpeed(i)
         setSettings(_settings)
     }
-
+    //array for Primary colors
     const primaryColors = [
         "rgb(53, 148, 24)",
         "rgb(33, 150, 243)",
@@ -109,7 +109,7 @@ export default function Settings() {
         "rgb(255, 0, 86)",
         "rgb(156, 39, 176)",
     ]
-
+    //Array for font sizes
     const fontSizes = [
         {
             id: 0,
@@ -127,7 +127,7 @@ export default function Settings() {
             value: "20px"
         },
     ]
-
+    //array for animation speed
     const animationSpeeds = [
         {
             id: 0,
@@ -152,6 +152,7 @@ export default function Settings() {
     return (
     <main>
         <div className="section d-block">
+            {/*choose light or dark theme */}
             <h2>Preferred Theme</h2>
             <div className="options-container">
                 <div className="option light" onClick={() => changeTheme(0)}>
@@ -172,6 +173,7 @@ export default function Settings() {
         </div>
 
         <div className="section d-block">
+            {/*choose primary color */}
             <h2>Primary color</h2>
             <div className="options-container">
                 { primaryColors.map((color, index) => (
@@ -186,6 +188,7 @@ export default function Settings() {
             </div>
         </div>
         <div className="section d-block">
+            {/*change font size */}
             <h2>Font size</h2>
             <div className="options-container">
                 { fontSizes.map((size, index) => (
@@ -197,6 +200,7 @@ export default function Settings() {
             </div>
         </div>
         <div className="section d-block">
+            {/*change animation speed */}
             <h2>Animation speed</h2>
             <div className="options-container">
                 { animationSpeeds.map((speed, index) => (

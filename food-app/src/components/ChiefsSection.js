@@ -1,6 +1,7 @@
 import ChiefCard from "./ChiefCard"
 
 export default function ChiefsSection() {
+    //Chef array. 
     const chiefs = [
         {
             name: "Tim Mälzer",

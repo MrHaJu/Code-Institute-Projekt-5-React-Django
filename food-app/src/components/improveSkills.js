@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function ImproveSkills(){
+    //List array
     const list =[
         "Learn new recepies",
         "Experiment with food",

@@ -13,6 +13,7 @@ import {
 export default function Navbar() {
   const [showSidebar, setShowSidebar] = useState(false);
   const location = useLocation()
+  //Link array
   const links = [
     {
       name: "Home",

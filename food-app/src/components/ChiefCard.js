@@ -2,6 +2,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faFacebook,faInstagram, faXTwitter} from "@fortawesome/free-brands-svg-icons"
 
 export default function ChiefCard({chief}) {
+    //create cards for each chef
     return (
         <div className="chief-card">
             <div className="chief-card-image">

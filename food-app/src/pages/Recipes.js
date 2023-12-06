@@ -1,5 +1,7 @@
 import RecipeCard from "../components/RecipeCard"
 import PreviousSearches from "../components/previousSearches"
+
+//array for recipes
 export default function Recepies() {
     const recipes = [
         {

@@ -4,6 +4,7 @@ import CustomImage from "./customimage"
 import { Link } from "react-router-dom";
 
 export default function HeroSection(){
+    //Image array 
     const images = [
         "https://res.cloudinary.com/db6t1xmmn/image/upload/c_scale,w_550/v1701115697/PP5/farhad-ibrahimzade-TvMWBS6TIsg-unsplash_ubjfew.jpg",
         "https://res.cloudinary.com/db6t1xmmn/image/upload/c_scale,w_550/v1701115676/PP5/artur-kornakov-kwJhh14nUcs-unsplash_rz3obd.jpg",
