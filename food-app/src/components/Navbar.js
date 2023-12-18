@@ -10,6 +10,8 @@ import {
   faSignIn,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export default function Navbar() {
   const [showSidebar, setShowSidebar] = useState(false);
   const location = useLocation()
@@ -31,7 +33,7 @@ export default function Navbar() {
       icon: faUser,
     },
     {
-      name: "Register",
+      name: "Sign up",
       path: "/register",
       icon: faSignIn,
     },
@@ -59,7 +61,7 @@ export default function Navbar() {
               to={link.path}
               key={link.name}
             >
-              {link.name}
+            <FontAwesomeIcon icon={link.icon} /> {link.name}
             </Link>
           ))}
         </div>
