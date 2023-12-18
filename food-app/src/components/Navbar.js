@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-
+import React, { useContext } from "react";
 import { useState } from "react";
 import Sidebar from "./sidebar";
 import {
@@ -11,8 +11,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { currentUserContext } from "../App";
 
 export default function Navbar() {
+  const currentUser = useContext(currentUserContext)
+  
   const [showSidebar, setShowSidebar] = useState(false);
   const location = useLocation()
   //Link array
@@ -27,16 +30,7 @@ export default function Navbar() {
       path: "/recipes",
       icon: faList,
     },
-    {
-      name: "Login",
-      path: "/login",
-      icon: faUser,
-    },
-    {
-      name: "Sign up",
-      path: "/register",
-      icon: faSignIn,
-    },
+    
     {
       name: "Settings",
       path: "/settings",
@@ -47,7 +41,24 @@ export default function Navbar() {
   function closeSidebar() {
     setShowSidebar(false);
   }
-
+  const loggedOutIcons = [{
+    name: "Login",
+    path: "/login",
+    icon: faUser,
+  },
+  {
+    name: "Sign up",
+    path: "/register",
+    icon: faSignIn,
+  },]
+  const loggedInIcons = [
+    {currentUser},
+    {
+      name: "Logout",
+      path: "/logout",
+      icon: faUser,
+    }
+  ]
   return (
     <>
       <nav className="navbar container">
@@ -64,6 +75,30 @@ export default function Navbar() {
             <FontAwesomeIcon icon={link.icon} /> {link.name}
             </Link>
           ))}
+           {/* Links for logged in user */}
+  {currentUser ? (
+    loggedInIcons.map((link) => (
+      <Link
+        className={location.pathname === link.path ? "active" : ""}
+        to={link.path}
+        key={link.name}
+      >
+        <FontAwesomeIcon icon={link.icon} /> {link.name}
+      </Link>
+    ))
+  ) : (
+    // Links for logged out user
+    loggedOutIcons.map((link) => (
+      <Link
+        className={location.pathname === link.path ? "active" : ""}
+        to={link.path}
+        key={link.name}
+      >
+        <FontAwesomeIcon icon={link.icon} /> {link.name}
+      </Link>
+    ))
+  )}
+  
         </div>
         <div
           onClick={() => setShowSidebar(!showSidebar)}
@@ -73,8 +108,9 @@ export default function Navbar() {
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
+        
       </nav>
-      {showSidebar && <Sidebar close={closeSidebar} links={links} />}
+      {showSidebar && <Sidebar close={closeSidebar} links={links} loggedInIcons={loggedInIcons} loggedOutIcons={loggedOutIcons} />}
     </>
   );
 }
