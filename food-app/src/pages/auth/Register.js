@@ -43,6 +43,7 @@ import axios from "axios";
             id="username"
             name="username"
             placeholder="Username"
+            autocomplete="username"
             value={username}
             onChange={handleChange}
             required
@@ -58,6 +59,7 @@ import axios from "axios";
             id="email"
             name="email"
             placeholder="E-Mail"
+            autocomplete="email"
             value={email}
             onChange={handleChange}
             required
@@ -73,6 +75,7 @@ import axios from "axios";
             id="password"
             name="password"
             placeholder="Password"
+            autocomplete="current-password"
             value={password}
             onChange={handleChange}
             required
