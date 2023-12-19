@@ -57,6 +57,11 @@ export default function Navbar() {
       name: "Logout",
       path: "/logout",
       icon: faUser,
+    },
+    {
+      name: "Profile",
+      path: "/Profile",
+      icon: faUser,
     }
   ]
   return (
